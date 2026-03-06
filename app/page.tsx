@@ -1,175 +1,238 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import { 
-  ChevronDown, ChevronRight, Menu, X, 
-  MapPin, Scale, Zap, Lock, MessageCircle, Star 
-} from 'lucide-react';
+import Navbar from "@/components/Nav";
 
 export default function HomePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeReview, setActiveReview] = useState(0);
-
-  const reviews = [
-    { name: "Savita Dhaiya", text: "Professional Delhi business registration service! They handled my GST filing and company incorporation with absolute transparency.", stars: 5 },
-    { name: "Nitin Aggarwal", text: "Excellent court representation in NCR. I had a difficult litigation case regarding a commercial lease, and the team provided strategic advice.", stars: 5 },
-    { name: "Prakash Pandey", text: "Property dispute solved smoothly in Noida. The legal notices drafted by Axilegal were airtight and forced negotiation.", stars: 5 }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveReview((prev) => (prev + 1) % reviews.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [reviews.length]);
-
   return (
-    <div className="min-h-screen font-sans text-slate-900 bg-white">
-      {/* Top Bar */}
-      <div className="bg-blue-900 text-white text-center py-2 text-sm font-medium">
+    <main className="bg-gray-50 text-gray-800">
+
+      {/* TOP BAR */}
+      <div className="bg-yellow-400 text-center text-xs sm:text-sm font-semibold py-2 px-2">
         Consultation Fee: ₹499 for 30 Minutes
       </div>
 
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 bg-white border-b border-slate-100">
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-          <div className="text-2xl font-bold text-blue-900">
-            Axi<span className="text-blue-500">legal</span>
-          </div>
+      {/* HEADER */}
+      <Navbar />
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#" className="font-medium hover:text-blue-600 transition">Home</a>
-            <div className="group relative">
-              <button className="flex items-center font-medium group-hover:text-blue-600">
-                Services <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
-              {/* Dropdown placeholder - simplified for brevity */}
-              <div className="hidden group-hover:block absolute top-full left-0 bg-white shadow-xl border border-slate-100 w-64 rounded-lg py-4">
-                <a href="#" className="block px-6 py-2 hover:bg-blue-50">Taxation</a>
-                <a href="#" className="block px-6 py-2 hover:bg-blue-50">Corporate Startups</a>
-                <a href="#" className="block px-6 py-2 hover:bg-blue-50">Litigation</a>
-              </div>
-            </div>
-            <a href="#" className="font-medium hover:text-blue-600">Freebies</a>
-            <div className="flex items-center space-x-4 ml-4">
-              <a href="#" className="text-blue-600 font-semibold">Sign up</a>
-              <a href="#" className="bg-blue-900 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition">Login</a>
-            </div>
-          </nav>
+      {/* HERO */}
+      <section className="bg-gradient-to-r from-[#0a1931] to-[#162a4d] text-white py-16 sm:py-20 md:py-28 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
-          {/* Mobile Menu Toggle */}
-          <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X /> : <Menu />}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            Legal Services For All Your Needs
+          </h2>
+
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 sm:mb-10">
+            Expert legal assistance for taxation, documentation,
+            registrations and consultations.
+          </p>
+
+          <button className="bg-yellow-400 text-[#0a1931] font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:-translate-y-1 transition">
+            Book Consultation
           </button>
-        </div>
-      </header>
 
-      {/* Hero Section */}
-      <section className="relative bg-slate-50 py-20 lg:py-32 overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10 text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Expert <span className="text-blue-600">Legal Solutions</span> for Your Future
-            </h1>
-            <p className="text-xl text-slate-600 mb-8 max-w-xl">
-              Reliable legal support for your business and personal needs. Transparent, digital-first, and results-driven.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg hover:-translate-y-1 transition-all">
-                Book Consultation - ₹499
-              </button>
-              <button className="border-2 border-slate-200 bg-white px-8 py-4 rounded-lg font-bold text-lg hover:border-blue-600 transition-all">
-                View All Services
-              </button>
-            </div>
-          </div>
-          <div className="hidden lg:block relative">
-             <div className="w-full h-96 bg-blue-100 rounded-3xl border-4 border-white shadow-2xl overflow-hidden flex items-center justify-center">
-                <Scale size={120} className="text-blue-900 opacity-20" />
-             </div>
-          </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Specialized Services</h2>
-          <div className="w-20 h-1.5 bg-blue-600 mx-auto mb-16 rounded-full"></div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {["Taxation", "Corporate", "Litigation", "Consumer", "Cyber Fraud", "IP Rights", "Documentation"].map((service) => (
-              <div key={service} className="group p-8 border border-slate-100 rounded-2xl text-left hover:shadow-xl hover:border-blue-200 transition-all">
-                <h3 className="text-xl font-bold mb-3">{service}</h3>
-                <ul className="text-slate-500 space-y-2 mb-6 text-sm">
-                  <li>• Professional Support</li>
-                  <li>• Documentation</li>
-                  <li>• Compliance</li>
-                </ul>
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-50">
-                   <span className="text-blue-600 font-bold">Starting ₹399</span>
-                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* ABOUT */}
+      <section id="about" className="py-16 sm:py-20 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0a1931] mb-6">
+            About Axilegal
+          </h3>
+
+          <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+            Axilegal provides professional legal and compliance services
+            designed for individuals, startups and businesses. Our
+            experienced team ensures that your legal processes are smooth,
+            transparent and efficient.
+          </p>
+
+          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+            From taxation and GST to documentation and registrations,
+            we offer affordable and reliable legal support tailored
+            to your needs.
+          </p>
+
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="py-20 bg-slate-900 text-white overflow-hidden">
-        <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto text-center">
-              <div className="flex justify-center mb-6">
-                {[...Array(5)].map((_, i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-6 h-6" />)}
-              </div>
-              <p className="text-2xl italic leading-relaxed mb-8">
-                &quot;{reviews[activeReview].text}&quot;
-              </p>
-              <h4 className="font-bold text-xl text-blue-400">— {reviews[activeReview].name}</h4>
-           </div>
-        </div>
-      </section>
+      {/* SERVICES */}
+      <section id="services" className="py-16 sm:py-20 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-      {/* Contact & Why Us */}
-      <section id="contact" className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-20">
-          <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
-            <h2 className="text-3xl font-bold mb-8">Quick Booking</h2>
-            <form className="space-y-4">
-              <input className="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" placeholder="Full Name" />
-              <input className="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" placeholder="Email" />
-              <textarea className="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-blue-500" rows={4} placeholder="Describe your case..." />
-              <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg">Confirm Booking</button>
-            </form>
-          </div>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-center text-[#0a1931] mb-12 sm:mb-16">
+            Our Services
+          </h3>
 
-          <div className="space-y-8">
-            <h2 className="text-3xl font-bold mb-10">Why Axilegal?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+
             {[
-              { icon: <MapPin />, title: "High Expertise", desc: "Consult with industry-leading experts." },
-              { icon: <Scale />, title: "Transparent Pricing", desc: "No hidden 'lawyer fees'. Fixed upfront pricing." },
-              { icon: <Zap />, title: "Fast-Track Processing", desc: "Digital-first approach is 40% faster." },
-              { icon: <Lock />, title: "Secure Data", desc: "Bank-grade encryption for all files." }
-            ].map((item, idx) => (
-              <div key={idx} className="flex gap-6">
-                <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center shrink-0">
-                  {item.icon}
+              {
+                title: "Tax Filing",
+                price: "₹999",
+                items: ["Income Tax Return", "TDS Filing", "Notice Reply"]
+              },
+              {
+                title: "GST Services",
+                price: "₹1499",
+                items: ["GST Registration", "GST Filing", "GST Notice Reply"]
+              },
+              {
+                title: "Business Setup",
+                price: "₹2999",
+                items: ["Proprietorship", "LLP Registration", "Startup Docs"]
+              },
+              {
+                title: "Legal Consultation",
+                price: "₹499",
+                items: ["30 Min Consultation", "Legal Advice", "Case Guidance"]
+              }
+            ].map((service, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 sm:p-8 rounded-xl shadow-md border hover:-translate-y-2 transition"
+              >
+
+                <h4 className="text-lg sm:text-xl font-bold text-[#0a1931] mb-4 text-center">
+                  {service.title}
+                </h4>
+
+                <div className="bg-yellow-50 text-center py-2 rounded mb-4 font-semibold text-sm sm:text-base">
+                  Starting from <span className="text-yellow-600">{service.price}</span>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-1">{item.title}</h4>
-                  <p className="text-slate-600">{item.desc}</p>
-                </div>
+
+                <ul className="text-gray-600 text-sm space-y-2 mb-6">
+                  {service.items.map((item, j) => (
+                    <li key={j}>• {item}</li>
+                  ))}
+                </ul>
+
+                <button className="w-full font-semibold text-[#0a1931] hover:text-yellow-500 text-sm sm:text-base">
+                  Learn More →
+                </button>
+
               </div>
             ))}
+
           </div>
         </div>
       </section>
 
-      {/* WhatsApp FAB */}
-      <button className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50">
-        <MessageCircle size={32} />
-      </button>
-    </div>
+      {/* REVIEWS */}
+      <section className="py-16 sm:py-20 md:py-24 bg-gray-50 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0a1931] mb-10 sm:mb-12">
+            Client Reviews
+          </h3>
+
+          <div className="bg-white shadow-lg rounded-xl p-6 sm:p-10">
+
+            <p className="italic text-base sm:text-lg text-gray-700 mb-6">
+              “Excellent service and professional guidance. Filing my taxes
+              became incredibly simple thanks to Axilegal.”
+            </p>
+
+            <strong className="text-[#0a1931] uppercase tracking-wider text-sm sm:text-base">
+              Rahul Sharma
+            </strong>
+
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-16 sm:py-20 md:py-24">
+        <div className="max-w-xl mx-auto px-4 sm:px-6">
+
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-center text-[#0a1931] mb-8 sm:mb-10">
+            Contact Us
+          </h3>
+
+          <div className="bg-white shadow-xl rounded-xl p-6 sm:p-8">
+
+            <form className="space-y-4">
+
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-full border rounded-lg p-3 text-sm sm:text-base"
+              />
+
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full border rounded-lg p-3 text-sm sm:text-base"
+              />
+
+              <textarea
+                placeholder="Your Message"
+                rows={4}
+                className="w-full border rounded-lg p-3 text-sm sm:text-base"
+              />
+
+              <button className="bg-yellow-400 w-full py-3 rounded-lg font-bold text-[#0a1931]">
+                Send Message
+              </button>
+
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-[#0a1931] text-white py-12 sm:py-14">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+
+          <div>
+            <h4 className="text-yellow-400 font-bold mb-4">Axilegal</h4>
+            <p className="text-sm text-gray-300">
+              Affordable legal services for individuals and businesses.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-yellow-400 font-bold mb-4">Services</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>Tax Filing</li>
+              <li>GST Services</li>
+              <li>Business Registration</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-yellow-400 font-bold mb-4">Company</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>About</li>
+              <li>Contact</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-yellow-400 font-bold mb-4">Support</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>Email Support</li>
+              <li>Live Chat</li>
+              <li>Help Center</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div className="text-center text-sm text-gray-400 mt-10">
+          © 2026 Axilegal. All rights reserved.
+        </div>
+      </footer>
+
+      {/* CHAT BUTTON */}
+      <div className="fixed bottom-5 right-5 sm:bottom-8 sm:right-8">
+        <button className="bg-green-500 text-white px-5 py-3 rounded-full shadow-lg text-sm sm:text-base">
+          Chat on WhatsApp
+        </button>
+      </div>
+
+    </main>
   );
 }

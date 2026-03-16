@@ -14,7 +14,7 @@ import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSub, MenubarS
 
 export default function Navbar() {
   return (
-    <header className="border-b bg-primary text-white">
+    <header className="border-b bg-primary text-white  sticky top-0">
 
       <div className="container mx-auto flex h-16 items-center justify-between">
 

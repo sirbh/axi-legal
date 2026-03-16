@@ -1,4 +1,6 @@
+import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Nav";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -26,7 +28,11 @@ export default function HomePage() {
           </p>
 
           <button className="bg-yellow-400 text-[#0a1931] font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:-translate-y-1 transition">
-            Book Consultation
+            <Link href={"https://calendly.com/chauhansaurabh425/30min"} target="_blank"
+  rel="noopener noreferrer">
+                Book Consultation
+            </Link>
+           
           </button>
 
         </div>
@@ -151,31 +157,7 @@ export default function HomePage() {
 
           <div className="bg-white shadow-xl rounded-xl p-6 sm:p-8">
 
-            <form className="space-y-4">
-
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full border rounded-lg p-3 text-sm sm:text-base"
-              />
-
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full border rounded-lg p-3 text-sm sm:text-base"
-              />
-
-              <textarea
-                placeholder="Your Message"
-                rows={4}
-                className="w-full border rounded-lg p-3 text-sm sm:text-base"
-              />
-
-              <button className="bg-yellow-400 w-full py-3 rounded-lg font-bold text-[#0a1931]">
-                Send Message
-              </button>
-
-            </form>
+            <ContactForm/>
 
           </div>
         </div>

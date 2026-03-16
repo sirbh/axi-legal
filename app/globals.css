@@ -4,6 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -114,6 +128,18 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+
+:root {
+  --primary: #0a1931;
+  --accent: #ffb400;
+  --accent-hover: #e6a200;
+  --light-bg: #f8f9fa;
+  --white: #ffffff;
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 @layer base {

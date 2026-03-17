@@ -151,12 +151,10 @@ export default function HomePage() {
             Starting from <span className="text-yellow-600">{service.price}</span>
           </p>
 
-          <a
-            href={service.link}
-            className="block w-full text-center font-semibold text-[#0a1931] hover:text-yellow-500 text-sm sm:text-base"
-          >
-            More Details →
-          </a>
+          <Link href={"https://calendly.com/chauhansaurabh425/30min"} target="_blank"
+              rel="noopener noreferrer">
+            Talk To Expert Now →
+          </Link>
         </div>
       ))}
     </div>

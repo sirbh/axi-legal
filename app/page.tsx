@@ -1,21 +1,18 @@
 import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Nav";
+import ReviewsSlider from "@/components/Reviews";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
     <main className="bg-gray-50 text-gray-800">
 
-      {/* TOP BAR */}
-      <div className="bg-yellow-400 text-center text-xs sm:text-sm font-semibold py-2 px-2">
-        Consultation Fee: ₹499 for 30 Minutes
-      </div>
 
-      {/* HEADER */}
-      <Navbar />
 
       {/* HERO */}
-      <section className="bg-gradient-to-r from-[#0a1931] to-[#162a4d] text-white py-16 sm:py-20 md:py-28 text-center">
+
+      
+      <section className="bg-gradient-to-r from-[#0a1931] to-[#162a4d] text-white !pt-40  sm:py-20 md:py-28 text-center min-h-screen w-full">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
@@ -29,139 +26,148 @@ export default function HomePage() {
 
           <button className="bg-yellow-400 text-[#0a1931] font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:-translate-y-1 transition">
             <Link href={"https://calendly.com/chauhansaurabh425/30min"} target="_blank"
-  rel="noopener noreferrer">
-                Book Consultation
+              rel="noopener noreferrer">
+              Book Consultation
             </Link>
-           
+
           </button>
 
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="py-16 sm:py-20 md:py-24">
+       <section id="about" className="py-16 sm:py-20 md:py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
 
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0a1931] mb-6">
+          <h3 className="text-2xl sm:text-5xl font-extrabold text-[#0a1931] mb-6 relative text-center mb-12 text-4xl font-extrabold text-[var(--primary)]
+           after:content-[''] after:block after:w-15 after:h-1 after:bg-[var(--accent)]
+           after:mx-auto after:mt-4 after:rounded-sm">
             About Axilegal
           </h3>
 
-          <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-            Axilegal provides professional legal and compliance services
-            designed for individuals, startups and businesses. Our
-            experienced team ensures that your legal processes are smooth,
-            transparent and efficient.
-          </p>
-
-          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-            From taxation and GST to documentation and registrations,
-            we offer affordable and reliable legal support tailored
-            to your needs.
-          </p>
-
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" className="py-16 sm:py-20 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-center text-[#0a1931] mb-12 sm:mb-16">
-            Our Services
-          </h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-
-            {[
-              {
-                title: "Tax Filing",
-                price: "₹999",
-                items: ["Income Tax Return", "TDS Filing", "Notice Reply"]
-              },
-              {
-                title: "GST Services",
-                price: "₹1499",
-                items: ["GST Registration", "GST Filing", "GST Notice Reply"]
-              },
-              {
-                title: "Business Setup",
-                price: "₹2999",
-                items: ["Proprietorship", "LLP Registration", "Startup Docs"]
-              },
-              {
-                title: "Legal Consultation",
-                price: "₹499",
-                items: ["30 Min Consultation", "Legal Advice", "Case Guidance"]
-              }
-            ].map((service, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 sm:p-8 rounded-xl shadow-md border hover:-translate-y-2 transition"
-              >
-
-                <h4 className="text-lg sm:text-xl font-bold text-[#0a1931] mb-4 text-center">
-                  {service.title}
-                </h4>
-
-                <div className="bg-yellow-50 text-center py-2 rounded mb-4 font-semibold text-sm sm:text-base">
-                  Starting from <span className="text-yellow-600">{service.price}</span>
-                </div>
-
-                <ul className="text-gray-600 text-sm space-y-2 mb-6">
-                  {service.items.map((item, j) => (
-                    <li key={j}>• {item}</li>
-                  ))}
-                </ul>
-
-                <button className="w-full font-semibold text-[#0a1931] hover:text-yellow-500 text-sm sm:text-base">
-                  Learn More →
-                </button>
-
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
-      {/* REVIEWS */}
-      <section className="py-16 sm:py-20 md:py-24 bg-gray-50 text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0a1931] mb-10 sm:mb-12">
-            Client Reviews
-          </h3>
-
-          <div className="bg-white shadow-lg rounded-xl p-6 sm:p-10">
-
-            <p className="italic text-base sm:text-lg text-gray-700 mb-6">
-              “Excellent service and professional guidance. Filing my taxes
-              became incredibly simple thanks to Axilegal.”
+          <div className="text-justify max-w-[850px] mx-auto text-[var(--text-muted)] text-[17px]">
+            <p>
+              Axilegal is a premier legal consultancy firm founded on the principles of
+              transparency, efficiency, and deep local expertise. In a landscape where
+              legal processes can often feel overwhelming, Axilegal stands as a bridge
+              between complex Indian regulations and your peace of mind. Based in the
+              heart of the National Capital Region, we specialize in providing
+              end-to-end legal, financial, and compliance solutions specifically
+              tailored for all markets.
             </p>
 
-            <strong className="text-[#0a1931] uppercase tracking-wider text-sm sm:text-base">
-              Rahul Sharma
-            </strong>
+            <p>
+              Inspired by the digital-first approach of India’s leading legal
+              platforms, Axilegal combines cutting-edge technology with a personalized
+              &quot;boots-on-the-ground&quot; touch. Whether you are an entrepreneur launching a
+              Private Limited Company, a business owner navigating GST and ROC
+              compliance, or an individual seeking airtight Property Documentation,
+              our team ensures your work is handled with precision.
+            </p>
 
+            <p>
+              What sets Axilegal apart is our hyper-local focus. We understand the
+              specific nuances of NCR’s administrative landscape, allowing us to
+              deliver results faster than national competitors. Our mission is to
+              empower the local business community by offering fixed-price,
+              high-quality legal services without the traditional hidden costs of
+              law firms. At Axilegal, we don&apos;t just process paperwork; we build the
+              legal foundation for your future success in India’s most vibrant
+              economic zone.
+            </p>
           </div>
+
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="py-16 sm:py-20 md:py-24">
-        <div className="max-w-xl mx-auto px-4 sm:px-6">
+<section id="services" className="py-16 sm:py-20 md:py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative overflow-hidden">
+    
+    <h3 className="text-2xl sm:text-5xl font-extrabold text-[#0a1931] mb-6 relative text-center mb-12 text-4xl font-extrabold text-[var(--primary)]
+           after:content-[''] after:block after:w-15 after:h-1 after:bg-[var(--accent)]
+           after:mx-auto after:mt-4 after:rounded-sm">
+      Our Specialized Services
+    </h3>
 
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-center text-[#0a1931] mb-8 sm:mb-10">
-            Contact Us
-          </h3>
+    <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+      {[
+        {
+          title: "Taxation",
+          price: "₹499",
+          items: ["GST Registration", "ITR Filing", "Tax Audits"],
+          link: "taxation.html"
+        },
+        {
+          title: "Corporate",
+          price: "₹499",
+          items: ["Incorporation", "Compliance", "ROC Filing"],
+          link: "corporate.html"
+        },
+        {
+          title: "Litigation",
+          price: "₹499",
+          items: ["Civil/Criminal", "Legal Notice", "Representation"],
+          link: "litigation.html"
+        },
+        {
+          title: "Consumer",
+          price: "₹1500",
+          items: ["Forum Claims", "Dispute Resolution", "Legal Advice"],
+          link: "consumer.html"
+        },
+        {
+          title: "Cyber Fraud",
+          price: "₹499",
+          items: ["Fraud Recovery", "FIR Support", "Digital Evidence"],
+          link: "cyber.html"
+        },
+        {
+          title: "IP Rights",
+          price: "₹999",
+          items: ["Trademark", "Copyright", "Patent Filing"],
+          link: "ip.html"
+        },
+        {
+          title: "Documentation",
+          price: "₹99",
+          items: ["Affidavits", "Rental Agreements", "SPA / GPA"],
+          link: "documentation.html"
+        },
+      ].map((service, i) => (
+        <div
+          key={i}
+          className="bg-white p-6 sm:p-8 rounded-xl shadow-md border hover:-translate-y-2 transition transform"
+        >
+          <h4 className="text-lg sm:text-xl font-bold text-[#0a1931] mb-4">
+            {service.title}
+          </h4>
 
-          <div className="bg-white shadow-xl rounded-xl p-6 sm:p-8">
+          <ul className="text-gray-600 text-sm space-y-2 mb-4 text-left">
+            {service.items.map((item, j) => (
+              <li key={j}>• {item}</li>
+            ))}
+          </ul>
 
-            <ContactForm/>
+          <p className="bg-yellow-50 text-center py-2 rounded mb-4 font-semibold text-sm sm:text-base">
+            Starting from <span className="text-yellow-600">{service.price}</span>
+          </p>
 
-          </div>
+          <a
+            href={service.link}
+            className="block w-full text-center font-semibold text-[#0a1931] hover:text-yellow-500 text-sm sm:text-base"
+          >
+            More Details →
+          </a>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+      <ReviewsSlider/>
+
+      <ContactForm/>
 
       {/* FOOTER */}
       <footer className="bg-[#0a1931] text-white py-12 sm:py-14">
@@ -211,7 +217,10 @@ export default function HomePage() {
       {/* CHAT BUTTON */}
       <div className="fixed bottom-5 right-5 sm:bottom-8 sm:right-8">
         <button className="bg-green-500 text-white px-5 py-3 rounded-full shadow-lg text-sm sm:text-base">
-          Chat on WhatsApp
+          <Link href={"https://calendly.com/chauhansaurabh425/30min"} target="_blank"
+              rel="noopener noreferrer">
+            BOOK CALL
+          </Link>
         </button>
       </div>
 

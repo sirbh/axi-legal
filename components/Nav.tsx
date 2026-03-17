@@ -2,19 +2,11 @@
 
 import Link from "next/link"
 
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu"
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "./ui/menubar"
 
 export default function Navbar() {
   return (
-    <header className="border-b bg-primary text-white  sticky top-0">
+    <header className="border-b bg-primary text-white  sticky top-0 z-10">
 
       <div className="container mx-auto flex h-16 items-center justify-between">
 
@@ -37,13 +29,26 @@ export default function Navbar() {
 
       {/* ABOUT */}
       <MenubarMenu>
-        <Link href="/about" className="px-3 py-2 text-sm">
+        <Link href="#about" className="px-3 py-2 text-sm">
           About Us
         </Link>
       </MenubarMenu>
 
+      {/* REVIEWS */}
+      <MenubarMenu>
+        <Link href="#reviews" className="px-3 py-2 text-sm">
+          Reviews 
+        </Link>
+      </MenubarMenu>
       {/* SERVICES */}
       <MenubarMenu>
+        <Link href="#services" className="px-3 py-2 text-sm">
+          Services
+        </Link>
+      </MenubarMenu>
+
+
+      {/* <MenubarMenu>
 
         <MenubarTrigger>
           Services
@@ -51,7 +56,6 @@ export default function Navbar() {
 
         <MenubarContent>
 
-          {/* TAXATION */}
           <MenubarSub>
 
             <MenubarSubTrigger>
@@ -60,7 +64,6 @@ export default function Navbar() {
 
             <MenubarSubContent>
 
-              {/* RETURN FILING */}
               <MenubarSub>
 
                 <MenubarSubTrigger>
@@ -97,7 +100,7 @@ export default function Navbar() {
 
               </MenubarSub>
 
-              {/* GST */}
+
               <MenubarSub>
 
                 <MenubarSubTrigger>
@@ -144,7 +147,6 @@ export default function Navbar() {
 
           </MenubarSub>
 
-          {/* CORPORATE */}
           <MenubarSub>
 
             <MenubarSubTrigger>
@@ -181,7 +183,6 @@ export default function Navbar() {
 
           </MenubarSub>
 
-          {/* LITIGATION */}
 
           <MenubarSub>
 
@@ -221,25 +222,25 @@ export default function Navbar() {
 
         </MenubarContent>
 
-      </MenubarMenu>
+      </MenubarMenu> */}
 
       {/* CONSULTATION */}
 
       <MenubarMenu>
-        <Link href="/consultation" className="px-3 py-2 text-sm">
+        <Link href="#contact" className="px-3 py-2 text-sm">
           Consultation
         </Link>
       </MenubarMenu>
 
       {/* FREEBIES */}
 
-      <MenubarMenu>
+      {/* <MenubarMenu>
 
         <MenubarTrigger>
           Freebies
         </MenubarTrigger>
 
-        <MenubarContent>
+        <MenubarContent>a
 
           <MenubarSub>
 
@@ -277,7 +278,7 @@ export default function Navbar() {
 
         </MenubarContent>
 
-      </MenubarMenu>
+      </MenubarMenu> */}
 
     </Menubar>
 
